@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo"> TUBE COFFEE</a>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Menu & Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Brightening Your Day, One Cup at a Time.</h1>
+            <p>Phnom Penh’s neighborhood favorite for the boldest Thnol Coffee and quick, freshly prepped bites..</p>
+            <a href="#services" class="btn">Explore Menu</a>
+        </div>
+    </header>
+
+    <section id="about" class="section about-section">
+        <h2>Our Story</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>TUBE COFFEE created by 3 Cambodian Shareholders. Tube is inspired by London’s metro system, the underground TUBE, for which its fast speed, reliable quality, and affordability are world-renowned. Naturally, these are the very essence which Tube coffee strives to be.</p>
+                <p>As synonymous as the tube is with London, Tube coffee aims to be the same in Cambodia, simply by being a Khmer brand created in Cambodia and made by Cambodians to compete with foreign brands. By using yellow, we hope to present to the world the warmth, freshness, happiness, optimism, and positivity of the Khmer culture. So, hop aboard and enjoy a smooth ride on the Khmer tube.</p>
+            </div></p>
+            <div class="about-image">
+                <img src="TUBE-COFFEE-LOGO-01-100x100-2.png" alt="Cozy Cafe Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/Services Section with Images -->
+    <section id="services" class="section services-section">
+        <h2>Our Menu & Services</h2>
+        <p class="section-subtitle">Premium offerings at fair prices.</p>
+        <div class="grid-container">
+            
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="TUBE-New-Drink-Menu-A3-En-Kh-Ch-1024x724-1.jpg" alt="Espresso Drinks">
+                </div>
+                <div class="card-content">
+                    <h3> Drinks </h3>
+                    <p class="price">From $2.40</p>
+                    <ul>
+                        <li>Frappe</li>
+                        <li>Ice or Hot Coffees</li>
+                        <li>Tea & Refreshments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2 (Popular) -->
+            <div class="card popular">
+                <div class="badge">Popular</div>
+                <div class="card-image">
+                    <img src="popular-drink.jpg" alt="Pastry Box">
+                </div>
+                <div class="card-content">
+                    <h3>Best Sellers</h3>
+                    <p class="price"></p>
+                    <ul>
+                        <li>Latte</li>
+                        <li>Thnol Coffee</li>
+                        <li>Green Milk Tea</li>
+                        <li>Fresh Passion Juice</li>
+                        <li>Wildberry Raspberry Tea</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="Food-menu.jpg" alt="Event Catering">
+                </div>
+                <div class="card-content">
+                    <h3>Foods</h3>
+                    <p class="price">$3.50</p>
+                    <ul>
+                        <li>លតឆាសាច់គោ</li>
+                        <li>បាយមាន់គ្រឿង</li>
+                         <li>មីសាច់ស្រួយ</li>
+                        <li>បាយសាច់ជ្រូកអាំង</li>
+                        <li>មីឆាសាច់គោពងមាន់</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 639 Kampuchea Krom Blvd(128), Phnom Penh</p>
+                <p><i class="fas fa-phone"></i> (+855) 15 711 533</p>
+                <p><i class="fas fa-envelope"></i> tubecafeinfo@gmail.com </p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo Message Sent!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy;Find your nearest Tube Coffee hub or order via your favorite delivery app! Over 60 locations across Cambodia, proudly bringing you your daily fuel.</p>
+    </footer>
+
+</body>
+</html>

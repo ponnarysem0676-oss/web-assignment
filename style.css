@@ -1,0 +1,395 @@
+/* --- Base Reset & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+}
+
+body {
+    background-color: #fcfbfa;
+}
+
+/* --- Shared Layout Styles --- */
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #845b3b; /* Warm coffee brown tone */
+}
+
+.section-subtitle {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ae642f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4a3728;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #965d2c;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #555;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #6f4e37;
+}
+
+/* --- Home / Hero Section --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('Background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* --- About Section --- */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-image img {
+    width: 200%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* --- Responsive Media Queries (Mobile View) --- */
+@media (max-width: 768px) {
+    /* Hide the checkbox completely */
+    .menu-checkbox {
+        display: none;
+    }
+
+    /* Style the Hamburger Wrapper on the top right */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Create the 3 horizontal bars for the hamburger icon */
+    .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #6f4e37; /* Coffee brown bars */
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Transform the links into a dropdown block on mobile */
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Sits directly below the navbar header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    /* MAGIC HAPPENS HERE: When checkbox is checked, display the menu dropdown */
+    .menu-checkbox:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* OPTIONAL: Animates the hamburger into an "X" when checked */
+    .menu-checkbox:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-checkbox:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Structural adjustments for mobile view layouts */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-container, .contact-container {
+        flex-direction: column;
+    }
+    
+    .card.popular {
+        transform: scale(1); /* Resets scale zoom on mobile screens */
+    }
+}
+
+/* Hide hamburger icon when viewing on normal Desktop sizes */
+@media (min-width: 769px) {
+    .hamburger, .menu-checkbox {
+        display: none;
+    }
+}
+
+/* --- Services / Pricing Section --- */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* --- Updated Services / Pricing Section with Images --- */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden; /* This keeps the image corners rounded inside the card */
+    display: flex;
+    flex-direction: column;
+}
+
+.card.popular {
+    border: 2px solid #6f4e37;
+    transform: scale(1.05);
+}
+
+/* Image formatting inside the card */
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Crops the image perfectly to fit the 200px height */
+    display: block;
+}
+
+/* Padding around the text inside the card */
+.card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.badge {
+    position: absolute;
+    top: 15px; /* Moved slightly down so it sits on top of the image nicely */
+    left: 85%;
+    transform: translateX(-50%);
+    background: #6f4e37;
+    color: white;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    z-index: 10; /* Ensures the badge stays visible over the image */
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: #4a3728;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-content ul {
+    list-style: none;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* --- Contact Section --- */
+.contact-container {
+    display: flex;
+    gap: 50px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: #4a3728;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-info i {
+    color: #6f4e37;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.contact-form {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* --- Footer Section --- */
+.footer {
+    background-color: #2b2118;
+    color: #c4b4a9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #c4b4a9;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: white;
+}
+
+/* --- Responsive Media Queries (Mobile View) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* In a real project, you could build a burger menu here */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-container, .contact-container {
+        flex-direction: column;
+    }
+    
+    .card.popular {
+        transform: scale(1); /* Reset scale on mobile layouts */
+    }
+}
