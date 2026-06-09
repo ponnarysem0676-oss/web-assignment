@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Daily Grind Cafe</title>
+    <title>Tube Coffee | Phnom Penh</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -41,7 +41,7 @@
             <div class="about-text">
                 <p>TUBE COFFEE created by 3 Cambodian Shareholders. Tube is inspired by London’s metro system, the underground TUBE, for which its fast speed, reliable quality, and affordability are world-renowned. Naturally, these are the very essence which Tube coffee strives to be.</p>
                 <p>As synonymous as the tube is with London, Tube coffee aims to be the same in Cambodia, simply by being a Khmer brand created in Cambodia and made by Cambodians to compete with foreign brands. By using yellow, we hope to present to the world the warmth, freshness, happiness, optimism, and positivity of the Khmer culture. So, hop aboard and enjoy a smooth ride on the Khmer tube.</p>
-            </div></p>
+            </div>
             <div class="about-image">
                 <img src="TUBE-COFFEE-LOGO-01-100x100-2.png" alt="Cozy Cafe Interior">
             </div>
@@ -51,13 +51,16 @@
     <!-- Pricing/Services Section with Images -->
     <section id="services" class="section services-section">
         <h2>Our Menu & Services</h2>
-        <p class="section-subtitle">Premium offerings at fair prices.</p>
+        <p class="section-subtitle">Premium offerings at fair prices. (Click images to zoom)</p>
         <div class="grid-container">
             
             <!-- Card 1 -->
             <div class="card">
                 <div class="card-image">
-                    <img src="TUBE-New-Drink-Menu-A3-En-Kh-Ch-1024x724-1.jpg" alt="Espresso Drinks">
+                    <!-- Clickable image link pointing to #img1 -->
+                    <a href="#img1">
+                        <img src="TUBE-New-Drink-Menu-A3-En-Kh-Ch-1024x724-1.jpg" alt="Espresso Drinks" class="zoomable-img">
+                    </a>
                 </div>
                 <div class="card-content">
                     <h3> Drinks </h3>
@@ -74,7 +77,10 @@
             <div class="card popular">
                 <div class="badge">Popular</div>
                 <div class="card-image">
-                    <img src="popular-drink.jpg" alt="Pastry Box">
+                    <!-- Clickable image link pointing to #img2 -->
+                    <a href="#img2">
+                        <img src="popular-drink.jpg" alt="Pastry Box" class="zoomable-img">
+                    </a>
                 </div>
                 <div class="card-content">
                     <h3>Best Sellers</h3>
@@ -92,15 +98,18 @@
             <!-- Card 3 -->
             <div class="card">
                 <div class="card-image">
-                    <img src="Food-menu.jpg" alt="Event Catering">
+                    <!-- Clickable image link pointing to #img3 -->
+                    <a href="#img3">
+                        <img src="Food-menu.jpg" alt="Event Catering" class="zoomable-img">
+                    </a>
                 </div>
                 <div class="card-content">
                     <h3>Foods</h3>
-                    <p class="price">$3.50</p>
+                    <p class="price">From $2.80</p>
                     <ul>
                         <li>លតឆាសាច់គោ</li>
                         <li>បាយមាន់គ្រឿង</li>
-                         <li>មីសាច់ស្រួយ</li>
+                        <li>មីសាច់ស្រួយ</li>
                         <li>បាយសាច់ជ្រូកអាំង</li>
                         <li>មីឆាសាច់គោពងមាន់</li>
                     </ul>
@@ -134,8 +143,24 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy;Find your nearest Tube Coffee hub or order via your favorite delivery app! Over 60 locations across Cambodia, proudly bringing you your daily fuel.</p>
+        <p>&copy;Find your nearest Tube Coffee hub, proudly bringing you your daily fuel.</p>
     </footer>
+
+    <!-- LIGHTBOX POPUPS FOR IMAGES -->
+    <div id="img1" class="lightbox">
+        <a href="#services" class="lightbox-close">&times;</a>
+        <img src="TUBE-New-Drink-Menu-A3-En-Kh-Ch-1024x724-1.jpg" alt="Drinks Menu Large">
+    </div>
+
+    <div id="img2" class="lightbox">
+        <a href="#services" class="lightbox-close">&times;</a>
+        <img src="popular-drink.jpg" alt="Popular Drinks Large">
+    </div>
+
+    <div id="img3" class="lightbox">
+        <a href="#services" class="lightbox-close">&times;</a>
+        <img src="Food-menu.jpg" alt="Food Menu Large">
+    </div>
 
 </body>
 </html>

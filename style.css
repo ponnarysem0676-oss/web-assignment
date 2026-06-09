@@ -281,7 +281,7 @@ body {
 .badge {
     position: absolute;
     top: 15px; /* Moved slightly down so it sits on top of the image nicely */
-    left: 85%;
+    left: 50%;
     transform: translateX(-50%);
     background: #6f4e37;
     color: white;
@@ -307,6 +307,58 @@ body {
     list-style: none;
     line-height: 1.8;
     color: #666;
+}
+
+/* Styling for the clickable menu preview images */
+.zoomable-img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.zoomable-img:hover {
+    transform: scale(1.03); /* Slight hover effect to show it's clickable */
+}
+
+/* Lightbox overlay configuration */
+.lightbox {
+    display: none; /* Invisible by default */
+    position: fixed;
+    z-index: 9999; /* Sits on top of all other elements */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black backdrop */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Shows the lightbox when its specific link id is targeted */
+.lightbox:target {
+    display: flex;
+}
+
+/* Style for the enlarged image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+/* Close button style ('X' mark) */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 50px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    color: #ffdd00; /* Changes to Tube Coffee yellow on hover */
 }
 
 /* --- Contact Section --- */
@@ -375,21 +427,147 @@ body {
     color: white;
 }
 
-/* --- Responsive Media Queries (Mobile View) --- */
+/* ==========================================================================
+   CONSOLIDATED MOBILE RESPONSIVE MEDIA QUERY (For screens <= 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* In a real project, you could build a burger menu here */
+    /* Section Padding tweak */
+    .section {
+        padding: 50px 15px;
     }
     
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .section h2 {
+        font-size: 2rem;
     }
 
-    .about-container, .contact-container {
+    /* 1. Hamburger Menu Logic */
+    .menu-checkbox {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #6f4e37;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links {
+        display: none; /* Kept hidden until toggle checked */
+        flex-direction: column;
+        position: absolute;
+        top: 55px; /* Aligns neatly right below navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 12px 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        font-size: 1.1rem;
+    }
+
+    /* Shows dropdown when hamburger is checked */
+    .menu-checkbox:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Hamburger Animation to 'X' */
+    .menu-checkbox:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-checkbox:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. Hero Component scaling */
+    .hero-content h1 {
+        font-size: 2.2rem;
+        padding: 0 10px;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* 3. About Section Layout Shift */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .about-image img {
+        max-width: 100%;
+        width: 250px; /* Fixes massive logo blowouts on small screens */
+    }
+
+    /* 4. Menu & Services Card Deck Layout */
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 340px; /* Ensures nice sizing across distinct phone viewports */
     }
     
     .card.popular {
-        transform: scale(1); /* Reset scale on mobile layouts */
+        transform: scale(1); /* Removes hover scaling which clips borders on mobile layouts */
+    }
+
+    /* 5. Contact Section Layout Shift */
+    .contact-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+    
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+
+    /* 6. Lightbox Mobile Optimizations */
+    .lightbox img {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 40px;
+    }
+}
+
+/* Hide navigation triggers safely on large desktops */
+@media (min-width: 769px) {
+    .hamburger, .menu-checkbox {
+        display: none;
     }
 }
